@@ -7,9 +7,16 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.2.1",
+    "@tensorflow-models/coco-ssd": "^2.2.1",
+    "@tensorflow/tfjs-backend-cpu": "^2.8.6",
+    "@tensorflow/tfjs-backend-webgl": "^2.8.6",
+    "@tensorflow/tfjs-converter": "^2.8.6",
+    "@tensorflow/tfjs-core": "^2.8.6",
+    "axios": "^0.21.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.6.0",
     "core-js": "^3.9.1",
+    "promise-file-reader": "^1.0.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
@@ -25,5 +32,11 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
+  },
+  "peerDependencies": {
+    "@tensorflow/tfjs-backend-cpu": "^2.8.6",
+    "@tensorflow/tfjs-backend-webgl": "^2.8.6",
+    "@tensorflow/tfjs-converter": "^2.8.6",
+    "@tensorflow/tfjs-core": "^2.8.6"
   }
 }
