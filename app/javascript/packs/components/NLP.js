@@ -1,52 +1,41 @@
 import React, { useState, useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {nlpModelAction, nlpModelAnswersAction} from '../actions/modelActions'
 import { Form, Container, Row, Col, ListGroup, Button} from 'react-bootstrap'
 import Example from '../components/Example'
 import Loader from './Loader'
+
 const NLP = () => {
-    const [modelState, setModelState] = useState(null)
-    const [answersState, setAnswersState] = useState(null)
-    const [loadingState, setLoadingState] = useState(false)
-
-
     //keep this as local state for when we refactor to redux 
     const [questionState, setQuestionState] = useState(null)
     const [passageState, setPassageState] = useState(null)
 
+    const dispatch = useDispatch()
+    
+    const nlpModel = useSelector(state => state.nlpModel)
+    const { loading, error, model } = nlpModel
 
-    const loadModel = async () => {
-        const model = await qna.load();
-        setModelState(model)
-        console.log("we made it here, model loaded")
-    }
+    const nlpAnswers = useSelector(state => state.nlpAnswers)
+    const { generating, e, answers } = nlpAnswers
+
 
     useEffect(() => {
-        loadModel()
-
-        return () => { }
-    }, [])
-
-    const onSubmitHandler = async (e) => {
-        setLoadingState(true)
-        e.preventDefault()
-        try {
-            console.log(loadingState)
-            console.log(questionState)
-            console.log(passageState)
-            const answer = await modelState.findAnswers(questionState, passageState)
-            setAnswersState(answer)
-            console.log(answer)
-            
-        } catch (e) {
-            console.log('something went wrong')
-          
+        
+        if(!model){
+            dispatch(nlpModelAction())
         }
-        setLoadingState(false)
+
+    }, [dispatch])
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault()
+        dispatch(nlpModelAnswersAction(passageState, questionState, model))
     }
 
     return (
         <Container>
             <h1>Natural Language Question Answering using BERT </h1>
-            {modelState === null ? <Loader/> :
+            {loading ? <Loader/> :
             <Row className='mt-3 mb-4'>
                 <Col sm={12} md={12} lg={6}>
 
@@ -63,16 +52,17 @@ const NLP = () => {
 
                         <Button variant="primary" type="submit">
                             Submit
-            </Button>
+                        </Button>
                     </Form>
                 </Col>
+                {generating ? <Loader/> :
                 <Col sm={12} md={12} lg={6}>
-                    {answersState === null ? <Example/> :
+                    {answers === [] ? <Example/> :
                     <ListGroup variant="flush">
-                        {answersState && answersState.map((ans) =>  <ListGroup.Item>{ans.text}</ListGroup.Item>) }
+                        {answers && answers.map((ans) =>  <ListGroup.Item>{ans.text}</ListGroup.Item>) }
                     </ListGroup>}
 
-                </Col>
+                </Col>}
             </Row> }
 
         </Container>

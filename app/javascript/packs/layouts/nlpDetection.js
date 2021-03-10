@@ -20,8 +20,8 @@ const nlpDetection = () => {
                 <div className="d-flex" id="wrapper">
                 {isOpen ? <Sidebar/> : <></>}
                 <div id="page-content-wrapper">
-                    <Navbar className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                      <Button className="btn" onClick={() => menuHandler()} id="menu-toggle">{isOpen ? <span>&#x2190;</span> : <span>&#x2192;</span>} </Button>
+                    <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+                      <Button className='btn' style={{backgroundColor:'transparent', border:'0px'}} onClick={() => menuHandler()} id="menu-toggle">{isOpen ? <span className='text-white'>&#x2190;</span> : <span className='text-white'>&#x2192;</span>} </Button>
                       {isOpen ? <Navigation/> : <NavigationOpen/>}
                     </Navbar>
                     <div className="container-fluid">

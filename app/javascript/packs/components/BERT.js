@@ -4,7 +4,7 @@ import BERTImage from '../imgs/BERTSlide.jpg'
 
 const BERT = () => {
     return (
-        <div class="container">
+        <div className="container">
 
             <h3>BERT (Bidirectional Encoder Representations from Transformers)</h3>
             <p>Bert is a deep learning algorithm for Natural Language processing. It is used to try to help computers understand language as we humans do. BERT has a huge emphasis on bidirectionality. This lets the computer pick up on context on where phrases could mean more than one thing. The model I tested on this application was pretrained on wikipedia which is an estimated 2500 million words. </p>

@@ -1,14 +1,9 @@
-:root{
-  background-color: darkgrey;
-}
-
 #wrapper {
   overflow-x: hidden;
 }
 
 
 #sidebar-wrapper {
-background-color: darkgrey;
 min-height: 100vh;
 margin-left: -15rem;
 -webkit-transition: margin .25s ease-out;

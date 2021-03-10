@@ -3,7 +3,7 @@ import {Image} from 'react-bootstrap'
 
 const CocoSsd = () => {
     return (
-        <div class="container">
+        <div className="container">
 
         <h3>COCO-SSD (Single Shot MultiBox Detection) </h3>
         <p>COCO-SSD is an object detection model powered pre-trained by tensorflow. COCO is a large scale object detection segmentation, and captioning dataset.  SSD stands for single-shot multibox dimension. This model can detect 90 objects with relatively high accuracy. The SSD works by extracting feature maps and subsequently applying convolution filter to detect objects </p>

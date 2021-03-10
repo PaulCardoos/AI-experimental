@@ -1,25 +1,20 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { itemAction } from '../actions/dataActions'
+import Loader from '../components/Loader'
 import {Table} from 'react-bootstrap'
 
 const Sample = () => {
     //switch this state over to redux when we refactor
-    const [dataState, setDataState] = useState([])
-
-
-    const getAllItems = async () => {
+    const dispatch = useDispatch()
     
-            const { data }  = await axios.get('http://localhost:3000/api/r/v1/items')
-            setDataState(data)
-
-    }
+    const fakeData = useSelector(state => state.fakeData)
+    
+    const {loading, error, items} = fakeData
 
     useEffect(() => {
-
-        getAllItems()
-
-
-    }, [])
+        dispatch(itemAction())
+    }, [dispatch])
 
     return (
     
@@ -33,8 +28,9 @@ const Sample = () => {
                     <th>Category</th>
                 </tr>
             </thead>
+            {loading && <Loader/> }
             <tbody>
-                {dataState.map((item ) => 
+                {items.map((item ) => 
                 (<tr>
                     <td>{item.id}</td>
                     <td>{item.name}</td>

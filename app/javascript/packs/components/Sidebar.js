@@ -4,13 +4,13 @@ import "../side.css"
 const Sidebar = () => {
   return (
     <>
-        <div className="bg-light border-right" id="sidebar-wrapper">
-          <div className="sidebar-heading">See Trains </div>
+        <div className="bg-dark border-right" id="sidebar-wrapper">
+          <div className="text-warning sidebar-heading">Recognize</div>
           <div className="list-group list-group-flush">
-            <a href="" className="list-group-item list-group-item-action bg-light">How It Works</a>
-            <a href="/detection" className="list-group-item list-group-item-action bg-light">Detection</a>
-            <a href="/nlp" className="list-group-item list-group-item-action bg-light">NLP</a>
-            <a href="/overview" className="list-group-item list-group-item-action bg-light">Overview</a>
+            <a href="/" className="text-white list-group-item list-group-item-action bg-dark">How It Works</a>
+            <a href="/detection" className="text-white list-group-item list-group-item-action bg-dark">Detection</a>
+            <a href="/nlp" className="text-white list-group-item list-group-item-action bg-dark">NLP</a>
+            <a href="/overview" className="text-white list-group-item list-group-item-action bg-dark">Overview</a>
           </div>
         </div>
     </>

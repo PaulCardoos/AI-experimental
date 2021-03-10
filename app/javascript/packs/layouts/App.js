@@ -8,19 +8,15 @@ import 'react-bootstrap'
 import '../side.css'
 
 
-
-
 const App = () => {
 
     return (
       <div>
-
-
       <Router>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/detection" component={Detection}/>
-        <Route exact path="/nlp" component={NlpDetection}/>
-        <Route exact path="/overview" component={Overview}/>
+        <Route path="/detection" component={Detection}/>
+        <Route path="/nlp" component={NlpDetection}/>
+        <Route path="/overview" component={Overview}/>
       </Router>
       </div>
 
