@@ -31,7 +31,7 @@ const Sample = () => {
             {loading && <Loader/> }
             <tbody>
                 {items.map((item ) => 
-                (<tr>
+                (<tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>{item.location}</td>

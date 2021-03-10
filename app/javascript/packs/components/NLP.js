@@ -57,10 +57,13 @@ const NLP = () => {
                 </Col>
                 {generating ? <Loader/> :
                 <Col sm={12} md={12} lg={6}>
-                    {answers === [] ? <Example/> :
+                    {answers.length === 0 ? <Example/> :
+                    <>
+                    <h5>Results</h5>
                     <ListGroup variant="flush">
                         {answers && answers.map((ans) =>  <ListGroup.Item>{ans.text}</ListGroup.Item>) }
-                    </ListGroup>}
+                    </ListGroup>
+                    </>}
 
                 </Col>}
             </Row> }

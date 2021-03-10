@@ -9,7 +9,9 @@ const BERT = () => {
             <h3>BERT (Bidirectional Encoder Representations from Transformers)</h3>
             <p>Bert is a deep learning algorithm for Natural Language processing. It is used to try to help computers understand language as we humans do. BERT has a huge emphasis on bidirectionality. This lets the computer pick up on context on where phrases could mean more than one thing. The model I tested on this application was pretrained on wikipedia which is an estimated 2500 million words. </p>
             <Image className='mb-3' fluid src={BERTImage}/>
-            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Now enters BERT, a language model which is bidirectionally trained (this is also its key technical innovation). This means we can now have a deeper sense of language context and flow compared to the single-direction language models.
+
+             Instead of predicting the next word in a sequence, BERT makes use of a novel technique called Masked LM (MLM): it randomly masks words in the sentence and then it tries to predict them. Masking means that the model looks in both directions and it uses the full context of the sentence, both left and right surroundings, in order to predict the masked word. Unlike the previous language models, it takes both the previous and next tokens into account at the same time. The existing combined left-to-right and right-to-left LSTM based models were missing this “same-time part”. (It might be more accurate to say that BERT is non-directional though.)</p>
 
         </div>
     )

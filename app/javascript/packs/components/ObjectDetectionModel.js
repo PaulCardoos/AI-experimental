@@ -1,4 +1,4 @@
-import { Button, Image, Container, Col, Row } from 'react-bootstrap'
+import { Button, Image, Table, Container, Col, Row } from 'react-bootstrap'
 import promisefile from 'promise-file-reader'
 import Target from "./Target"
 import Loader from './Loader'
@@ -6,6 +6,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {cocoModelAction, cocoPredictionAction} from '../actions/modelActions'
 import React, { useEffect, useRef, useState } from 'react'
 import '../side.css'
+import { Prev } from 'react-bootstrap/esm/PageItem'
 
 const ObjectDetectionModel = () => {
   //local state for redux refactoring
@@ -20,7 +21,7 @@ const ObjectDetectionModel = () => {
   const {loading, cocoModel} = cocoSsdModel
 
   const cocoPredictions = useSelector(state => state.cocoPredictions)
-  const { predictions } = cocoPredictions
+  const { generating, predictions } = cocoPredictions
 
   //useRef is great for obtaining sizes
   const imageRef = useRef()
@@ -42,7 +43,7 @@ const ObjectDetectionModel = () => {
       setCurrentRefState(imgRef)
 
     }
-  }, [imageState, dispatch, predictionState]);
+  }, [imageState, dispatch]);
 
 
   //image upload process
@@ -107,6 +108,27 @@ const ObjectDetectionModel = () => {
             <Col className="col-md-12 text-center"><input type="file" style={{ display: "none" }} ref={fileRef} onChange={(e) => onSelectImage(e)} />
               <Button onClick={getFile} className="mt-3" variant="outline-dark">Select An Image</Button></Col>
           </Row>
+          {generating && <Loader/>}
+          {predictions.length === 0 ? <></> : 
+          <Table className='mt-4' striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Predictions</th>
+                  <th>Probability</th>
+                </tr>
+              </thead>
+              <tbody>
+              {predictions.map(pre =>
+                      <tr>
+                      <td>1</td>
+                      <td>{pre.class}</td>
+                      <td>{pre.score * 100}</td>
+                    </tr>)}
+              </tbody>
+    
+  
+          </Table>}
      </Container>
   
       </div>
