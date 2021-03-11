@@ -109,10 +109,11 @@ const ObjectDetectionModel = () => {
           </Row>
           {generating && <Loader/>}
           {predictions.length === 0 ? <></> : 
+          <>
+          <h5 className='text-center mt-3 mb-4'>Results</h5>
           <Table className='mt-4' striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>#</th>
                   <th>Predictions</th>
                   <th>Probability</th>
                 </tr>
@@ -120,14 +121,13 @@ const ObjectDetectionModel = () => {
               <tbody>
               {predictions.map(pre =>
                       <tr>
-                      <td>1</td>
                       <td>{pre.class}</td>
                       <td>{pre.score * 100}</td>
                     </tr>)}
               </tbody>
     
   
-          </Table>}
+          </Table></>}
      </Container>
   
       </div>

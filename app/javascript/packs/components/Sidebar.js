@@ -8,7 +8,7 @@ const Sidebar = () => {
           <div className="text-warning sidebar-heading">Recognize</div>
           <div className="list-group list-group-flush">
             <a href="/" className="text-white list-group-item list-group-item-action bg-dark">How It Works</a>
-            <a href="/detection" className="text-white list-group-item list-group-item-action bg-dark">Detection</a>
+            <a href="/detection" className="text-white list-group-item list-group-item-action bg-dark">Object Detection</a>
             <a href="/nlp" className="text-white list-group-item list-group-item-action bg-dark">NLP</a>
           </div>
         </div>

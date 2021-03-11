@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {nlpModelAction, nlpModelAnswersAction} from '../actions/modelActions'
-import { Form, Container, Row, Col, ListGroup, Button} from 'react-bootstrap'
+import { Form, Container, Row, Col, Table, Button} from 'react-bootstrap'
 import Example from '../components/Example'
 import Loader from './Loader'
 
@@ -17,7 +17,7 @@ const NLP = () => {
 
     const nlpAnswers = useSelector(state => state.nlpAnswers)
     const { generating, e, answers } = nlpAnswers
-
+    console.log(answers)
 
     useEffect(() => {
         
@@ -57,14 +57,28 @@ const NLP = () => {
                 </Col>
                 {generating ? <Loader/> :
                 <Col sm={12} md={12} lg={6}>
-                    {answers.length === 0 ? <Example/> :
-                    <>
-                    <h5>Results</h5>
-                    <ListGroup variant="flush">
-                        {answers && answers.map((ans) =>  <ListGroup.Item>{ans.text}</ListGroup.Item>) }
-                    </ListGroup>
-                    </>}
-
+                    {answers.length === 0 ? <Example/> : 
+                <>
+                <h5 className='text-center'>Results</h5>
+                <Table className='mt-3' striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Answers</th>
+                    <th>Probability</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {answers.map(pre =>
+                        <tr>
+                        <td>-</td>
+                        <td>{pre.text}</td>
+                        <td>{pre.score * 10}</td>
+                      </tr>)}
+                </tbody>
+      
+    
+            </Table></>}
                 </Col>}
             </Row> }
 
