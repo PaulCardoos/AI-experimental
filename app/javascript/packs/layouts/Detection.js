@@ -20,7 +20,7 @@ const Detection = () => {
             <div id="page-content-wrapper">
                 <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
                 <Button className='btn' style={{backgroundColor:'transparent', border:'0px'}} onClick={() => menuHandler()} id="menu-toggle">{isOpen ? <span className='text-white'>&#x2190;</span> : <span className='text-white'>&#x2192;</span>} </Button>
-                  {isOpen ? <Navigation/> : <NavigationOpen/>}
+                {isOpen ? <Navigation/> : <NavigationOpen/>}
                 </Navbar>
                 <ObjectDetectionModel/>
                 
