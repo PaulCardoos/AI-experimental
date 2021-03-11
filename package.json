@@ -33,6 +33,11 @@
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
   },
+ 
+    "optionalDependencies": {
+      "fsevents": "2.1.2"
+  
+  },
   "peerDependencies": {
     "@tensorflow/tfjs-backend-cpu": "^2.8.6",
     "@tensorflow/tfjs-backend-webgl": "^2.8.6",
