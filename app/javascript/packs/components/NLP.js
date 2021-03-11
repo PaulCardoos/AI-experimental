@@ -34,8 +34,8 @@ const NLP = () => {
 
     return (
         <Container>
-            <h1>Natural Language Question Answering using BERT </h1>
-            {loading ? <Loader/> :
+            <h1 className='text-center'>Natural Language Question Answering using BERT </h1>
+                {loading ? <Loader/> :
             <Row className='mt-3 mb-4'>
                 <Col sm={12} md={12} lg={6}>
 

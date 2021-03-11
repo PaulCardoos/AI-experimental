@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  username: react-rails
-  database: <%= Rails.application.credentials.dig(:development, :postgres_username) %>
-  password: <%= Rails.application.credentials.dig(:development, :postgres_password) %>
+  username: <%= Rails.application.credentials.dig(:production, :postgres_username) %>
+  database: react-rails
+  password: <%= Rails.application.credentials.dig(:production, :postgres_password) %>

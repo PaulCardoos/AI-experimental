@@ -5,7 +5,7 @@ import Loader from './Loader'
 import {useSelector, useDispatch} from 'react-redux'
 import {cocoModelAction, cocoPredictionAction} from '../actions/modelActions'
 import React, { useEffect, useRef, useState } from 'react'
-import '../side.css'
+
 
 const ObjectDetectionModel = () => {
   //local state for redux refactoring
