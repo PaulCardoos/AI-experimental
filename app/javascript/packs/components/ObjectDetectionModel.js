@@ -6,7 +6,6 @@ import {useSelector, useDispatch} from 'react-redux'
 import {cocoModelAction, cocoPredictionAction} from '../actions/modelActions'
 import React, { useEffect, useRef, useState } from 'react'
 import '../side.css'
-import { Prev } from 'react-bootstrap/esm/PageItem'
 
 const ObjectDetectionModel = () => {
   //local state for redux refactoring
