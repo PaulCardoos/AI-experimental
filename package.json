@@ -38,6 +38,10 @@
     "fsevents": "1.2.13"
   
   },
+  "scripts": {
+    "start": "rails server"
+
+  },
   "peerDependencies": {
     "@tensorflow/tfjs-backend-cpu": "^2.8.6",
     "@tensorflow/tfjs-backend-webgl": "^2.8.6",
