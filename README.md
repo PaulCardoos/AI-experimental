@@ -6,7 +6,7 @@ The how it works page is a description of the models used. That is self explanit
 on the sidebar takes and image and will accuratley predict what is in the image using a model 
 from tensorflow.
 
-<img src="./objDetectionModelEX.png">
+<img src="./objDetectionModelEx.png">
 
 The second model takes in any passage and allow you to ask question about it. I chose a passage about eliud
 kipchoge for the example but it really can be anything. 
@@ -19,8 +19,8 @@ and I admit that I need to find a better way
 
 This project uses Ruby version 2.7.2. You can build the project by cloning the repository and 
 running 
-
+```
 npm i 
 rails server
-
+```
 Warning: The models are large and take a few seconds to load
