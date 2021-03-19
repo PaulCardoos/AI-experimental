@@ -1,15 +1,14 @@
 import React from 'react'
 
 const Target = ({reference, size, prediction}) => {
-
+    //convert to size so that they fit on the image
     const l = (prediction.bbox[0] * reference.imgRefWidth) / size.imgWidth;
     const t = (prediction.bbox[1] * reference.imgRefHeight) / size.imgHeight;
     const w = (prediction.bbox[2] * reference.imgRefWidth ) / size.imgWidth;
     const h = (prediction.bbox[3] * reference.imgRefHeight ) / size.imgHeight;
     const predict = prediction.class
-    //const predictionAccuracy = prediction.score * 100
-    console.log(l, t, w)
 
+    //set style for the border around what model predicts
     const targetStyle = {
         left:l + "px",
         top: t + "px",

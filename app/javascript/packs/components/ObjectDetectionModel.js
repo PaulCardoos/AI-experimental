@@ -77,7 +77,6 @@ const ObjectDetectionModel = () => {
           }
 
     } catch (e) { 
-          const newImage = null
           console.log(e)
           return 
     }

@@ -2,6 +2,8 @@ import React from 'react'
 import "../side.css"
 
 const Sidebar = () => {
+  //sidebar should be used as main navigation
+
   return (
     <>
         <div className="bg-dark border-right" id="sidebar-wrapper">

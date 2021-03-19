@@ -12,7 +12,7 @@ import {
     COCO_PREDICTION_SUCCESS
 } from '../constants/modelsConstant'
 
-
+//just basic redux
 export const nlpModelReducer = (state =  { model : null }, action) => {
 
     switch(action.type){

@@ -3,6 +3,7 @@ import {Image} from 'react-bootstrap'
 import BERTImage from '../imgs/BERTSlide.jpg'
 
 const BERT = () => {
+    //BERT info component for How it works page
     return (
         <div className="container">
 

@@ -7,28 +7,33 @@ import Loader from './Loader'
 
 const NLP = () => {
     //keep this as local state for when we refactor to redux 
-    const [questionState, setQuestionState] = useState(null)
-    const [passageState, setPassageState] = useState(null)
+    const [questionState, setQuestionState] = useState('')
+    const [passageState, setPassageState] = useState('')
 
     const dispatch = useDispatch()
     
     const nlpModel = useSelector(state => state.nlpModel)
-    const { loading, error, model } = nlpModel
+    const { loading, model } = nlpModel
 
     const nlpAnswers = useSelector(state => state.nlpAnswers)
-    const { generating, e, answers } = nlpAnswers
+    const { generating, answers } = nlpAnswers
     console.log(answers)
+    console.log(passageState)
+    console.log(questionState)
 
     useEffect(() => {
-        
+        //ideally we want the model to remain as state so we do not have to load the model everytime
         if(!model){
             dispatch(nlpModelAction())
         }
 
+        
     }, [dispatch])
-
+    
     const onSubmitHandler = (e) => {
         e.preventDefault()
+        //get answers from redux
+        console.log("debug")
         dispatch(nlpModelAnswersAction(passageState, questionState, model))
     }
 
@@ -36,7 +41,7 @@ const NLP = () => {
         <Container>
             <h1 className='text-center'>Natural Language Question Answering using BERT </h1>
                 {loading ? <Loader/> :
-            <Row className='mt-3 mb-4'>
+            <Row className='mt-3 smb-4'>
                 <Col sm={12} md={12} lg={6}>
 
                     <Form onSubmit={onSubmitHandler}>
@@ -70,7 +75,7 @@ const NLP = () => {
                 </thead>
                 <tbody>
                 {answers.map(pre =>
-                        <tr>
+                        <tr key={pre}>
                         <td>-</td>
                         <td>{pre.text}</td>
                         <td>{pre.score * 10}</td>

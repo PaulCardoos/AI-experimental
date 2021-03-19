@@ -3,6 +3,7 @@ import { Row , Col, Container} from 'react-bootstrap'
 
 
 const Loader = () => {
+    //Spinner loading component for looks
     return (
       <Container>
         <Row>

@@ -8,6 +8,8 @@ import {Navbar, Container, Row,Col, Button} from 'react-bootstrap'
 import 'react-bootstrap'
 import '../side.css'
 
+//Home page
+
 const Home = () => {
     
     const [isOpen, setIsOpen] = useState(true)

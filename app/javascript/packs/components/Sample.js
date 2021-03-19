@@ -10,7 +10,7 @@ const Sample = () => {
     
     const fakeData = useSelector(state => state.fakeData)
     
-    const {loading, error, items} = fakeData
+    const {loading, items} = fakeData
 
     useEffect(() => {
         dispatch(itemAction())

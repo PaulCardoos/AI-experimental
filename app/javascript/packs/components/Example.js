@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Col} from 'react-bootstrap'
 
 const Example = () => {
+    //example passage a question component for the BERT model
     return (
         <Container>
             <Col> 

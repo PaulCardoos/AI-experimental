@@ -6,6 +6,8 @@ import NavigationOpen from '../components/Navigation'
 import ObjectDetectionModel from '../components/ObjectDetectionModel'
 import '../side.css'
 
+//the page where we will hold our detection model
+
 const Detection = () => {
     
     const [isOpen, setIsOpen] = useState(true)

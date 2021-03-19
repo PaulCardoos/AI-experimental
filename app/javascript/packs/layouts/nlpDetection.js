@@ -6,16 +6,14 @@ import NavigationOpen from '../components/NavigationOpen'
 import NLP from '../components/NLP'
 import '../side.css'
 
-
 const nlpDetection = () => {
  
         const [isOpen, setIsOpen] = useState(true)
     
         const menuHandler = () => {
-          
             return isOpen ? setIsOpen(false) : setIsOpen(true)
         }
-    
+
             return (
                 <div className="d-flex" id="wrapper">
                 {isOpen ? <Sidebar/> : <></>}
@@ -31,8 +29,6 @@ const nlpDetection = () => {
                   </div>
                 </div>
             )
-    
 }
-
 
 export default nlpDetection

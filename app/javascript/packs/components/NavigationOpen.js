@@ -1,11 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-bootstrap'
 import "../side.css"
 
-
 const NavigationOpen = () => {
-
-
+    //the navbar when the side bar is closed
     return (
      
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -25,8 +22,6 @@ const NavigationOpen = () => {
           </ul>
         </div>
        
-
-  
     )
 }
 

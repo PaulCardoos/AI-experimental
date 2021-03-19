@@ -3,6 +3,7 @@ import {Image} from 'react-bootstrap'
 import Coco from '../imgs/cocoSsd.png'
 
 const CocoSsd = () => {
+    //COCOSSD info component for How it works page
     return (
         <div className="container">
 

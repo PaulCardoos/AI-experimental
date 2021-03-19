@@ -4,7 +4,6 @@ import {
     ITEMS_FAILURE
 } from '../constants/dataConstants'
 
-
 //must be a pure function
 
 export const itemsReducer = (state = {items : []} , action) => {
