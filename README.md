@@ -1,6 +1,14 @@
 # README
 Visit the application here on https://recogniz.herokuapp.com/
-
+<h3>Technologies </h3> 
+<ul> 
+  <li>React</li>
+  <li>Rails</li>
+  <li>Postgres</li> 
+  <li>Ruby</li>
+  <li>tensorflow</li>
+</ul>
+<h3>Introduction</h3>
 This is a simple project that was built to get familiar with uising rails and react on the frontend. It uses the 
 tensorflow COCO-SSD and BERT models 
 
@@ -15,11 +23,11 @@ kipchoge for the example but it really can be anything.
 
 <img src="./nlpExample.png">
 
-In the example above I ask the model about Tom Brady. Sometime the model does not understand what the question is
-and I admit that I need to find a better way to display that no results were found which is easy to do, just being 
-lazy. Also, sometime the model does recognize the questiojn. AI is not perfect...yet.
+In the example above I ask the model about Tom Brady. Sometimes the model does not understand what the question is and the page does not notify the user when nothing is recognized. Feel free to contribute and fix this bug as I continue to work on it.
 
+AI is not perfect...yet.
 
+<h3>How to run</h3>
 This project uses Ruby version 2.7.2. You can build the project by cloning the repository and 
 running 
 ```
