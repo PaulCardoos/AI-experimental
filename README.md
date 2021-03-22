@@ -8,7 +8,9 @@ Visit the application here on https://recogniz.herokuapp.com/
   <li>Ruby</li>
   <li>tensorflow</li>
 </ul>
+
 <h3>Introduction</h3>
+
 This is a simple project that was built to get familiar with uising rails and react on the frontend. It uses the 
 tensorflow COCO-SSD and BERT models 
 
@@ -28,6 +30,7 @@ In the example above I ask the model about Tom Brady. Sometimes the model does n
 AI is not perfect...yet.
 
 <h3>How to run</h3>
+
 This project uses Ruby version 2.7.2. You can build the project by cloning the repository and 
 running 
 ```
